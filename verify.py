@@ -6,9 +6,8 @@ from globals import *
 
 for name in argv[1:]:
     with open(name, "r") as f:
-        values = []
-        for line in f:
-            values.append(float(line))
+        values = [float(line) for line in f]
+
         if sorted(values) == values:
             toWrite = INCREASE
         elif sorted([-x for x in values]) == [-x for x in values]:
